@@ -6,7 +6,7 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  site: "https://sohamd22.github.io/",
+  site: "https://devlabs.club",
   base: "/devlabs-website",
   output: "server",
   adapter: cloudflare()
