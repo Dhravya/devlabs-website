@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Main from '../components/Main.astro';
+import Events from '../components/Events.astro';
 import Team from '../components/Team.astro';
 import CenteredSection from '../components/CenteredSection.astro';
 import Navbar from '../components/Navbar.astro';
@@ -12,9 +13,10 @@ import HeadingBig from '../components/text/HeadingBig.astro';
 import Highlight from '../components/text/Highlight.astro';
 import Paragraph from '../components/text/Paragraph.astro';
 
-import Button from '../components/Button.astro';
+import LinkButton from '../components/LinkButton.astro';
 import Scroll from '../components/Scroll.astro';
 import Cards from '../components/Cards.astro';
+import ContactForm from '../components/ContactForm.astro';
 
 import GradientBlob from '../components/GradientBlob.astro';
 
@@ -31,7 +33,7 @@ import GradientBlob from '../components/GradientBlob.astro';
         <div class="w-2/3 flex flex-col lg:gap-16 md:gap-12 gap-8 items-center text-center md:pt-40 md:pb-32 py-20">
             <WrappedText size="normal" className=''>what do we do?</WrappedText>
             <Heading>we're an <img src="/devlabs-website/asu.png" alt="ASU" class="xl:h-11 md:h-8 h-6 mb-2 inline-block"> club that hosts meetings <Highlight>every week</Highlight></Heading>
-            <div class="flex flex-wrap gap-3 justify-center">
+            <div class="flex flex-wrap gap-2 justify-center">
                 <WrappedText size="large" className="border-orange-300 text-orange-300">in-person socializing</WrappedText>
                 <WrappedText size="large" className="border-orange-300 text-orange-300">1 hour/week</WrappedText>
                 <WrappedText size="large" className="border-orange-300 text-orange-300">free pizza and goodies</WrappedText>
@@ -57,6 +59,8 @@ import GradientBlob from '../components/GradientBlob.astro';
         </div>
     </CenteredSection>
 
+    <Events />
+
     <Team members={[["soham daga", "/team/soham.jpg", "technical director"], ["dhravya shah", "/team/dhravya.png", "vice president"],
      ["dhanush vardhan", "/team/dhanush.jpg", "president"], ["bhoomi singhani", "/team/bhoomi.jpeg", "vp of operations"],
      ["chakshu jain", "/team/chakshu.JPG", "vp of finance"], ["aryan keluskar", "/team/aryan.png", "industry director"],
@@ -64,20 +68,31 @@ import GradientBlob from '../components/GradientBlob.astro';
      ["aditya bohra", "/team/aditya.jpg", "marketing officer"], ["riya ubhe", "/team/riya.jpg", "marketing officer"],
      ["anay shirolkar", "/team/anay.jpg", "marketing officer"]]}/>
 
+    <CenteredSection id="contact" className="mb-24">
+        <GradientBlob top="-400px" right="-350px" left="" scale="1.5" />
+
+        <div class="w-2/3 flex flex-col lg:gap-16 md:gap-12 gap-8 items-center text-center md:py-40 py-20">
+            <WrappedText size="normal" className=''>want to talk to us?</WrappedText>
+            <Heading><Highlight>reach out</Highlight> and say hi.</Heading>
+            <ContactForm />
+        </div>
+    </CenteredSection>
+
     <CenteredSection id="join" className="md:pt-40 md:pb-52 pt-20 pb-40 overflow-hidden">
         <GradientBlob top="0" left="5%" right="" scale="1.5" />
         <div class="w-1/2 flex flex-col lg:gap-16 md:gap-12 gap-8 items-center text-center">
-            <WrappedText size="normal" className=''>first meeting on aug 29</WrappedText>
+            <WrappedText size="normal" className=''>first meeting on aug 28</WrappedText>
             <HeadingBig>ready to build <Highlight>the future</Highlight>?</HeadingBig>
             <div class="flex flex-col gap-8 items-center w-full">
                 <Paragraph>We're ready, all thanks to our sponsors.</Paragraph>
                
             </div>
              <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6 justify-center items-center gap-6 w-full">
-                    <img src="/devlabs-website/sponsors/cloudflare.svg" alt="Cloudflare" class="inline-block h-8 md:h-12 px-2">
-                    <img src="/devlabs-website/sponsors/devfolio.svg" alt="Devfolio" class="inline-block h-8 md:h-11 px-2">
-                </div>
-            <Button>join devlabs (it's fun)</Button>
+                <img src="/devlabs-website/sponsors/cloudflare.svg" alt="Cloudflare" class="inline-block h-8 md:h-12 px-2">
+                <img src="/devlabs-website/sponsors/devfolio.svg" alt="Devfolio" class="inline-block h-8 md:h-11 px-2">
+            </div>
+            
+            <LinkButton link="https://asu.campuslabs.com/engage/organization/devlabs">join devlabs (it's fun)</LinkButton>
         </div>
     </CenteredSection>
 
